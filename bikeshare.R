@@ -1,9 +1,10 @@
-ny = read.csv('new_york_city.csv')
-wash = read.csv('washington.csv')
-chi = read.csv('chicago.csv')
 
 library(ggplot2)
 library(plyr)
+
+ny = read.csv('new_york_city.csv')
+wash = read.csv('washington.csv')
+chi = read.csv('chicago.csv')
 
 # we would like to review the 3 states combined
 New_NY<-cbind(ny,replicate(dim(ny)[1],"NY"))
@@ -31,7 +32,7 @@ qplot(x=format(as.Date(Data$Start.Time),'%B'),main = "Histogram of Counts of Tra
 count(format(as.Date(Data$Start.Time),'%B'))
 
 ggplot(Data,aes(x=Data$Trip.Duration)) +geom_histogram(aes(y=..density..),  
-                                                       colour="black", fill="white")+ geom_density(colour="red")  +scale_x_continuous(limits = c(0, 3000)) 
-+ labs(x = "Time of Travel") + labs(y = "Count of Travels")+labs(title = "Count of Travels by Time")	  
+       colour="black", fill="white")+ geom_density(colour="red")  +scale_x_continuous(limits = c(0, 3000)) 
+       + labs(x = "Time of Travel") + labs(y = "Count of Travels")+labs(title = "Count of Travels by Time")	  
 
 summary(Data$Trip.Duration)
