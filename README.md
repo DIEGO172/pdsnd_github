@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+7/15/2019
 
 ### Project Title
-Replace the Project Title
+git bikeshare code in R
 
 ### Description
-Describe what your project is about and what it does
+The project is based in R code to analyise the bike travales infromation in the New York, Chicago and Washington states
 
 ### Files used
-Include the files used
+bikeshare.R
+Data
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf
+
+
 
