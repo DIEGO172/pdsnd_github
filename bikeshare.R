@@ -13,7 +13,6 @@ colnames(New_Wash)[10]<-"City"
 New_Chi<-cbind(ny,replicate(dim(ny)[1],"Chicago"))
 colnames(New_Chi)[10]<-"City"
 Data<-rbind(New_NY,New_Wash,New_Chi)
-names(Data)
 
 # first we plot the number of birth dates by travles
 qplot(x=Birth.Year, data=Data, color = I('black'),binwidth = 0.5,main = "Histogram of counts of travels y birth date", 
