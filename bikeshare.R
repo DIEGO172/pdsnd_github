@@ -15,7 +15,7 @@ colnames(New_Chi)[10]<-"City"
 Data<-rbind(New_NY,New_Wash,New_Chi)
 
 # first we plot the number of birth dates by travles
-qplot(x=Birth.Year, data=Data, color = I('black'),binwidth = 0.5,main = "Histogram of counts of travels y birth date", 
+qplot(x=Birth.Year, data=Data, color = I('black'),binwidth = 0.5,main = "Histogram of Counts of Travels and Birth Date", 
       xlab = "Birth Dates",ylab = "Count of Travels")+scale_x_continuous(breaks=seq(1920, 2001, by=5), lim=c(1920,2001))
 
 # we count the number of travels by birth date
@@ -24,14 +24,14 @@ Birth_Max<-na.omit(count(Data$Birth.Year))
 # lookup by the max count of travles
 subset(Birth_Max,freq==max(Birth_Max))
 
-qplot(x=format(as.Date(Data$Start.Time),'%B'),main = "Histogram of counts of travels by month", 
-      xlab = "Month of travel",ylab = "Count of Travels")
+qplot(x=format(as.Date(Data$Start.Time),'%B'),main = "Histogram of Counts of Travels by Month", 
+      xlab = "Month of Travel",ylab = "Count of Travels")
 
 # we create the table o travel counts
 count(format(as.Date(Data$Start.Time),'%B'))
 
 ggplot(Data,aes(x=Data$Trip.Duration)) +geom_histogram(aes(y=..density..),  
                                                        colour="black", fill="white")+ geom_density(colour="red")  +scale_x_continuous(limits = c(0, 3000)) 
-+ labs(x = "Time of travel") + labs(y = "count of travels")+labs(title = "Count of travels by time")	  
++ labs(x = "Time of Travel") + labs(y = "Count of Travels")+labs(title = "Count of Travels by Time")	  
 
 summary(Data$Trip.Duration)
